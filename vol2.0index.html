@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>オーイシマサヨシ生成マシーン</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 画面全体の高さを設定 */
+            margin: 0;
+            background-color: #f9f9f9; /* 背景色を追加 */
+        }
+        #result {
+            font-size: 110px; /* フォントサイズを設定 */
+            font-weight: bold; /* 太字に設定 */
+            text-align: center; /* 中央揃え */
+            margin: 20px 0;
+            color: #000; /* 文字色を黒に設定 */
+        }
+        button {
+            padding: 20px 40px;
+            font-size: 32px; /* ボタンの文字サイズを設定 */
+            cursor: pointer;
+    margin-top: 130px; /* ボタンの位置をさらに下げる */
+}
+    </style>
+</head>
+<body>
+    <div id="result">オーイシマサヨシ生成マシーン</div>
+    <button onclick="generateRandomText()">生成する</button>
+
+    <script>
+        // 元の文字列
+        const originalText = "オーイシマサヨシブドーカン";
+
+        // ランダムに13文字を生成する関数（重複許可）
+        function generateRandomText() {
+            let result = "";
+            for (let i = 0; i < 13; i++) {
+                const randomIndex = Math.floor(Math.random() * originalText.length);
+                result += originalText[randomIndex]; // ランダムに1文字を選ぶ
+            }
+            document.getElementById("result").textContent = result; // 結果を表示
+        }
+    </script>
+</body>
+</html>
